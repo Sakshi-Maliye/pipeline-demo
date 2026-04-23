@@ -1,9 +1,9 @@
-FROM python:3.9-slim
+FROM eclipse-temurin:17
 
 WORKDIR /app
 
-COPY app.py .
-EXPOSE 5020
-#RUN javac App.java
+COPY App.java .
 
-CMD ["python", "app.py"]
+RUN javac App.java
+
+CMD ["java", "App"]
